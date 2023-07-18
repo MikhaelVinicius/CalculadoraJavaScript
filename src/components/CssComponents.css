@@ -1,17 +1,18 @@
 /* Estilos para centralizar o aplicativo na tela */
 .app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 0vh;
+}
+
   
   /* Estilos para o componente ButtonBox */
   .button-box {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5px;
-    width: 50%;
+   
     align-items: center;
   }
   
@@ -37,26 +38,3 @@
     display: inline-block;
     font-size: 22px;
   }
-
-  /* Estilos para o componente Display */
-.display {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  margin-bottom: 10px;
-  width: 50%;
-}
-
-.expression {
-  font-size: 18px;
-}
-
-.current-value {
-  font-size: 32px;
-}
-
-  

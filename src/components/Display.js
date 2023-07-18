@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "./CssComponents.css";
+import "./Display.css";
 
 function Display(props) {
   return (
