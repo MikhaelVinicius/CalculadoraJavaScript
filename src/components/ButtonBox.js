@@ -4,7 +4,7 @@ import Button from './Button';
 
 function ButtonBox(props) {
   const { setCurrentValue, currentValue, setExpression, expression } = props;
-  const buttons = ['1', '2', '3', '+', '4', '5', '6', '-', '7', '8', '9', '*', '.', '0', '=', '/','C'];
+  const buttons =  ['MC', 'MR', 'M+', 'M-', '1', '2', '3', '+', '4', '5', '6', '-', '7', '8', '9', '*', '.', '0', '=', '/','C'];
 
   function handleButtonClick(value) {
     
@@ -20,7 +20,20 @@ function ButtonBox(props) {
       const result = eval(expression + currentValue);
       setCurrentValue(result.toString());
       setExpression('');
-    } else {
+
+    } else if (value === 'M+') {
+        
+        props.setMemoryValue(props.memoryValue + parseFloat(currentValue));
+      } else if (value === 'M-') {
+        
+        props.setMemoryValue(props.memoryValue - parseFloat(currentValue));
+      } else if (value === 'MR') {
+       
+        setCurrentValue(props.memoryValue.toString());
+      } else if (value === 'MC') {
+        
+        props.setMemoryValue(0);
+      } else {
       
       setExpression(expression + currentValue + value);
       setCurrentValue('');
